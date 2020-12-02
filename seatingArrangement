@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Wave{
+    public static void main(String arfs[]){
+    Scanner sc=new Scanner(System.in);
+    int s=sc.nextInt();
+    for(int i=0;i<s;i++){
+    int n=sc.nextInt();
+    int m=check(n);
+        if(n%6==0||n%6==1) {
+            System.out.println((m-n)+" WS");
+        }
+        else if(n%6==4||n%6==3){
+            System.out.println((m-n)+" AS");
+        }
+        else
+            SysWem.out.println((m-n)+" MS");
+    }
+    }
+    static int check(int n){
+        int r;
+        if(n%12==0){
+            r=n/12;
+        }
+        else{
+            r=n/12+1;
+        }
+        return (13*((r*2)-1)-(r-1)*2);
+    }
+}
+//
