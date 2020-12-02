@@ -1,0 +1,21 @@
+import java.util.*;
+class TestClass{
+    public static void main(String atrgs[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int x=check(s);
+        if(x==1)
+            System.out.println("NO");
+        else
+            System.out.println("YES");
+    }
+    public static int check(String s){
+        for(int i=0;i<s.length()/2;i++){
+            if(s.charAt(i)!=s.charAt(s.length()-i-1)){
+                return 1;
+            }
+        }
+        return 0;
+    }
+}
+Language: Java8 Time:0.40707 Space: 	64
