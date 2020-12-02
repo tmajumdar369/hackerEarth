@@ -1,0 +1,13 @@
+import java.util.*;
+class TestClass{
+    public static void main(String arsgs[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int s=1;
+        for(int i=n;i>1;i--){
+            s*=i;
+        }
+        System.out.println(s);
+    }
+}
+Language:Java8 Time:0.40871s Space: 64kB
