@@ -1,0 +1,19 @@
+import java.util.*;
+class testClass{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String s=sc.nextLine();
+        if(s.contains("HH")){
+            System.out.println("NO");
+        }
+        else{
+            String s1=s.replace(".","B");
+            System.out.println("YES");
+            System.out.println(s1);
+        }
+        
+    }
+}
+//Language: Java8 Time:2.6446s Space:	64 kiB
