@@ -1,0 +1,45 @@
+import java.util.*;
+class costOfBalloons{
+    public static void main(String arsfs[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int x=0;x<n;x++){
+            int g=sc.nextInt();
+            int p=sc.nextInt();
+            int l1=0,l2=0;
+            if(g<p){
+                l1=g;
+                l2=p;
+            }
+            else if(p<=g){
+                l1=p;
+                l2=g;
+            }
+            //System.out.println(l1+" "+l2);
+            int m=sc.nextInt();
+            int p1=0,p2=0;
+            for(int i=0;i<2*m;i++){
+                if(i%2==0){
+                    int s=sc.nextInt();
+                    if(s==1){
+                        p1++;
+                    }
+                }
+                else if(i%2!=0){
+                    int t=sc.nextInt();
+                    if(t==1){
+                        p2++;
+                    }
+                }
+            }
+            if(p1>p2){
+                System.out.println(((p1*l1)+(p2*l2)));
+            }
+
+            else if(p2>=p1){
+                System.out.println(((p1*l2)+(p2*l1)));
+            }
+        }
+    }
+} 
+//Language: Java8 Time: 0.20262  Space:64
