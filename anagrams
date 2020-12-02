@@ -1,0 +1,69 @@
+/* IMPORTANT: Multiple classes and nested static classes are supported */
+ 
+/*
+ * uncomment this if you want to read input.
+//imports for BufferedReader*/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+/*
+//import for Scanner and other utility classes
+import java.util.*;
+*/
+ 
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+ 
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        /* Sample code to perform I/O:
+         * Use either of these methods for input
+ 
+        //BufferedReader
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String name = br.readLine();                // Reading input from STDIN
+        System.out.println("Hi, " + name + ".");    // Writing output to STDOUT
+ 
+        //Scanner
+        Scanner s = new Scanner(System.in);
+        String name = s.nextLine();                 // Reading input from STDIN
+        System.out.println("Hi, " + name + ".");    // Writing output to STDOUT
+ 
+        */
+        checkAnagrams();
+        // Write your code here
+ 
+    }
+    	static void checkAnagrams() throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String ip = br.readLine();
+		int count = Integer.parseInt(ip);
+		int i=0;
+		do {
+			String s1 = br.readLine();
+			String s2 = br.readLine();
+			System.out.println(countManipulations(s1, s2) + countManipulations(s2, s1));
+			i++;
+		} while (i<count);
+	}
+	static int countManipulations(String s1, String s2) {
+		int count = 0;
+ 
+		// store the count of character
+		int[] char_count = new int[26];
+ 
+		// iterate though the first String and update
+		// count
+		for (int i = 0; i < s1.length(); i++) 
+			char_count[s1.charAt(i) - 'a']++;
+ 
+		// iterate through the second string
+		// update char_count.
+		// if character is not found in char_count
+		// then increase count
+		for (int i = 0; i < s2.length(); i++)
+			if (char_count[s2.charAt(i) - 'a']-- <= 0)
+				count++;
+ 
+		return count;
+	}
+}
+//Language: Java8 Time: 0.20257s Space:64kiB
